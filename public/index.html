@@ -69,6 +69,7 @@ async function send(){
       addMsg('Error: ' + (data.error.message || JSON.stringify(data.error)), 'ai');
     } else {
       addMsg(data.reply, 'ai');
+promptEl.focus();
     }
   } catch(e){
     loader.remove();
