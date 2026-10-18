@@ -6,7 +6,7 @@ require('dotenv').config();
 const app = express();
 app.use(cors());
 app.use(express.json());
-app.use(express.static('public'));
+app.use(express.static(__dirname));
 
 app.post('/chat', async (req, res)=>{
   try{
@@ -35,7 +35,7 @@ app.post('/chat', async (req, res)=>{
   }
 });
 
-app.get('/', (req,res)=> res.sendFile(path.join(__dirname,'public','index.html')));
+app.get('/', (req,res)=> res.sendFile(path.join(__dirname,'index.html')));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, ()=> console.log('Running on '+PORT));
