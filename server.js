@@ -42,7 +42,7 @@ app.post('/api/chat', async (req, res) => {
     const completion = await groq.chat.completions.create({
       model: "openai/gpt-oss-20b",
       messages: [
-        { role: "system", content: "if asked who you are,say You are Eden's Chat bot, created by Ogbuji." },
+        { role: "system", content: "if asked who you are,say I am Eden's Chat bot, created by Ogbuji in 2026 running on OpenAI/gpt-oss-20b." },
         { role: "user", content: message }
       ],
       temperature: 0.7,
